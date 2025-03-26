@@ -462,3 +462,61 @@ footer {
   float: right;
   margin-left: 10px;
 }
+
+
+
+/* Dark Mode - Text and Base Elements */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff !important; /* Force white text everywhere */
+}
+
+/* Force white text on all child elements */
+body.dark-mode * {
+  color: #ffffff !important;
+}
+
+/* Map Container */
+body.dark-mode #map {
+  background-color: #1a1a1a;
+}
+
+/* Map Tiles - Dark Mode Version */
+body.dark-mode .leaflet-tile {
+  filter: brightness(0.6) invert(1) contrast(3) hue-rotate(200deg) saturate(0.3) brightness(0.7);
+}
+
+/* Map Controls */
+body.dark-mode .leaflet-control {
+  background-color: #2d2d2d !important;
+  color: white !important;
+  border-color: #444 !important;
+}
+
+/* Map Popups */
+body.dark-mode .leaflet-popup-content-wrapper {
+  background-color: #2d2d2d !important;
+  color: white !important;
+}
+
+/* Buttons and Inputs - Keep some contrast */
+body.dark-mode button:not(#darkModeToggle),
+body.dark-mode input {
+  background-color: #333 !important;
+  color: white !important;
+  border-color: #555 !important;
+}
+
+/* Dark Mode Toggle Button */
+body.dark-mode #darkModeToggle {
+  color: #ffcc00 !important; /* Yellow color for visibility */
+}
+
+/* Specific element overrides */
+body.dark-mode #infoBox,
+body.dark-mode .box,
+body.dark-mode #searchdetails {
+  background-color: #1e1e1e !important;
+  color: white !important;
+  border-color: #444 !important;
+}
