@@ -74,7 +74,29 @@ export const initialize_DistanceFinder_EventListeners = () => {
   });
 
   // Handles selecting a location from the map
-  document.getElementById("fromMap")?.addEventListener("click", () => {
+  document.getElementById("fromMapStart")?.addEventListener("click", () => {
+    if (!marker) return; // Ensures a marker exists on the map
+
+    try {
+      const { lat, lng } = marker.getLatLng();
+      activeInputElement.value = `${(lat.toFixed(5))},${lng.toFixed(5)}`; // Updates the active input with the selected coordinates
+      const selectedLocation = { lat:lat, lon: lng };
+
+      // Updates the appropriate variable based on the focused input
+      if (activeInputElement.id === "beginning") {
+        startingCoordinates = selectedLocation;
+      } else {
+        destinationCoordinates = selectedLocation;
+      }
+
+      successSound.play(); // Plays a sound to confirm selection
+    } catch (error) {
+      console.error("Error selecting location from map:", error);
+      alert("Focus on the starting point or destination then select point on map");
+    }
+  });
+  //handle selecting a location from the map at end
+  document.getElementById("fromMapEnd")?.addEventListener("click", () => {
     if (!marker) return; // Ensures a marker exists on the map
 
     try {
@@ -103,7 +125,13 @@ export const initialize_DistanceFinder_EventListeners = () => {
   distanceBox.addEventListener("keydown", (event) => {
     if (event.altKey && event.key === "l") {
       event.preventDefault();
-      document.getElementById("fromMap")?.click(); // Simulates clicking the "fromMap" button
+      document.getElementById("fromMapStart")?.click(); // Simulates clicking the "fromMap" button
+    }
+  });
+  distanceBox.addEventListener("keydown"  , (event)=>{
+    if (event.altKey && event.key === "l") {
+      event.preventDefault();
+      document.getElementById("fromMapEnd")?.click(); // Simulates clicking the "fromMap" button
     }
   });
 
