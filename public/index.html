@@ -66,10 +66,16 @@
     <button title="Click to Zoom-Out" aria-label="Click to Zoom-Out" class="fa fa-minus" title="Zoom Out"></button>
     <button title="Click to select Layers" aria-label="Click to select layers" class="fa fa-layer-group" title="Layers"
       id="layers-btn"></button>
-    <div id="layers-dropdown" class="dropdown-content">
-      <button title="geographical-layer" aria-label="geographical-layer" id="geographical-layer">Geographical</button>
-      <button title="political-layer" aria-label="political-layer" id="political-layer">Political</button>
-    </div>
+
+   <div id="layers-dropdown" class="d-flex gap-2 p-2 bg-light rounded shadow">
+  <button title="geographical-layer" id="geographical-layer" class="btn btn-outline-primary d-flex align-items-center justify-content-center ">
+    <i class="fa fa-globe me-2"></i> Geographical
+  </button>
+  <button title="political-layer" id="political-layer" class="btn btn-outline-success d-flex align-items-center justify-content-center ">
+    <i class="fa fa-landmark me-2"></i> Political
+  </button>
+</div>
+
     <button class="fa fa-location-arrow" id="locateme" title="Locate me"
       aria-label="Locate your location on map"></button>
       <button title="Click To Enable Dark Mode" aria-label="Click to enable Drak Mode" class="fas fa-moon" title="Dark Mode " id="darkModeToggle"></button>
@@ -99,8 +105,10 @@
       <span><i class="fas fa-circle"></i></span>
       <div class="dist-input" id="c-beginning"><input type="text" tabindex="0" id="beginning"
           placeholder="Enter Starting point" aria-label="type place and press enter" />
-        <button tabindex="0" aria-label="click to see suggessions" id="b-searchbutton"><i
-            class="fa fa-search"></i></button>
+        <!-- <button tabindex="0" aria-label="click to see suggessions" id="b-searchbutton"><i
+            class="fa fa-search"></i></button> -->
+            <button class="fas fa-map-marked-alt w-20 h-20 " aria-hidden="true" title="Choose from map" id="fromMapStart"
+            tabindex="-1"></button>
       </div>
     </div>
 
@@ -109,13 +117,14 @@
       <span><i class="fas fa-map-marker-alt"></i></span>
       <div class="dist-input" id="c-destination"><input tabindex="0" type="text" id="destination"
           placeholder="Enter Destination" aria-label="type place and press enter" />
-        <button id="d-searchbutton" tabindex="0" aria-label="click to see suggessions"><i
-            class="fa fa-search"></i></button>
+        <!-- <button id="d-searchbutton" tabindex="0" aria-label="click to see suggessions"><i
+            class="fa fa-search"></i></button> -->
+            <button class="fas fa-map-marked-alt w-20 h-20 " aria-hidden="true" title="Choose from map" id="fromMapEnd"
+            tabindex="-1"></button>
       </div>
     </div>
 
-    <button class="fas fa-map-marked-alt" aria-hidden="true" title="Choose from map" id="fromMap"
-      tabindex="-1"></button>
+   
     <button class="fas fa-arrow-circle-right" tabindex="0" id="find" title="Find Distance"
       aria-label=" click to Find distance"></button>
     <div tabindex="0" id="distanceResult" aria-live="polite">

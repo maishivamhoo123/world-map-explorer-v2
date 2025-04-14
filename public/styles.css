@@ -324,11 +324,11 @@ header button{
 #layers-dropdown button {
   background-color: #000000b7;
   color: white;
-  width: 100px;
-  height: 50px;
+  width: 90px;
+  height: 60px;
   text-shadow: #000000;
   padding-bottom: 0px;
-  padding-top: 30px;
+  padding-top:0px;
   border: 2px;
   border-color: #000000;
   border-radius: 5px;
@@ -337,7 +337,7 @@ header button{
 }
 #geographical-layer{
  position: absolute; 
- margin-left: 105px;
+ margin-left: 115px;
  color: black;
  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
  padding-left: 15px;
@@ -345,7 +345,7 @@ header button{
 }
 #political-layer{
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-  padding-left: 50px;
+  padding-left: 10px;
 }
 
 .dist-input{
